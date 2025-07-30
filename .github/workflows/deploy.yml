@@ -19,6 +19,10 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          cd homelab-app
-          git pull origin main
-          docker-compose up -d --build
+            cd homelab-app
+            git pull origin main
+            docker-compose down
+            docker system prune -af
+            docker-compose build --no-cache
+            docker-compose up -d
+
