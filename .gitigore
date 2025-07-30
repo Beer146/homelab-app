@@ -1,0 +1,19 @@
+# Prevent private keys and SSH files from being committed
+gh-actions-key*
+*.pem
+*.key
+*.pub
+
+# Python
+__pycache__/
+*.pyc
+
+# Docker
+*.log
+
+# OS files
+.DS_Store
+
+# Editor/IDE settings
+.vscode/
+.idea/
